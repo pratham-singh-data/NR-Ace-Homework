@@ -1,0 +1,4 @@
+Implement Counting Sort Yourself
+Find sum of all subsets using recursion, currSubset cannot be used. (No other change in signature); you may replace currSubset with anything. Use signature:
+    vector<int> go(vector<int> v)
+    as boiler plate; can make another function  

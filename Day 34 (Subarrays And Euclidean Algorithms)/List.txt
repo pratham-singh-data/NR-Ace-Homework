@@ -1,0 +1,2 @@
+Write code for optimised GCD Finder.
+Write code for subarrays.

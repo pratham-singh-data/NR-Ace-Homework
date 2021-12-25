@@ -1,0 +1,18 @@
+1) Given an array of n integers and an integer x, Find total occurence of x in the array
+Test Case:
+    x = 5   n = 7
+    array = [1, 2, 5, 3, 5, 6, 5]
+    Output = 3
+
+2) Given a string s pass it to a function that will return a string with the properties:
+    if in the string 'a' was written enter 1 in that position. for 'b' enter '2'. And if it was x replace 
+    with 24
+    eg:
+    input: abxy
+    output: 122425
+
+3) A string s is given , you have to generate an output such that from the pairs of adjacent,
+    lexicographically smallest charachter will be removed. If a charachter is unpaired, returned it as it is.
+    eg:
+        input: electronics
+        output: letois

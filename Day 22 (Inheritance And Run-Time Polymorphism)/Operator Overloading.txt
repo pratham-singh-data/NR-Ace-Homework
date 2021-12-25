@@ -1,0 +1,25 @@
+C++ allows us to give more than one defination of an operator (overload) in same scope.
+
+Operators that cannot be overloaded:
+1) Scope Resolution Operator (::)
+2) sizeof Operator
+3) Member Selector (.)
+4) Member pointer selector (*)
+5) Ternary operator (?:)
+
+Syntax:
+Binary Operator:
+    return type operator <operator symbol> (<right operand object>)
+    left operand is accessed by this as:
+        a + b
+    can be interpretted as:
+        a.add(b)
+
+Note: Sorthand operaors need to be updated seperately.
+
+Unary Oerator:
+    Prefix:
+        <class name> operator -- ()
+    Postfix
+        <class name> operator ++ (int)
+        Here int contains zero and is passed as parameter for postfix operators.

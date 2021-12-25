@@ -1,0 +1,10 @@
+1) Take n
+     *
+    **
+   ***
+  ****
+
+  over and so on
+
+2) Screenshot
+3) In calculator from previous homework, take repeated inputs, until we click on quit

@@ -1,0 +1,16 @@
+1) WAP to make a calculator with the features: +, -, *, /
+    to use:
+        	get input
+            get textual input of operator
+            if a symbol other than these is given print("Wrong Operator")
+    
+2) WAP to give grades to students according to their marks. I/P is marks (Single)
+    Grading System:
+        90 - 100 -> A+
+        80 - 89 -> A 
+        70 - 79 -> B+ and so on...
+    use grades: A+, A, B+, B, C+, C, F
+
+3) Do Programs Done in Class if not done in class (done in class, no need)
+
+Expect more homework on Sunday.

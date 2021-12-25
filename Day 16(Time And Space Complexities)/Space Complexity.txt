@@ -1,0 +1,83 @@
+From Simple Snippets(YouTube)
+
+Space complexity of an algorithm is the amount of space needed to execute the program/algorithm. It is 
+also expressed in asymptotic notations.
+
+For anu algorithm, memory is needed for:
+1) Storing program instructions
+2) Storing constant values
+3) Store variable values
+4) Storing function calls, jumping statements etc. (Stacks)
+
+Auxilary Space: Extra space other than input space, this is the temporary space used by the computer to 
+store temporray data like function calls, variables, constants etc.
+
+Space complexity includes bith input space and auxillary space. Though in all calculations we only consider
+the aauxillary space.
+
+1)
+    function add(n1, n2){
+        sum = n1 + n2;
+        return sum;
+    }
+
+    Input: 2 input integers:
+            Assume int takes 4 bytes so, 8
+            next, sum another int, 4 Bytes 
+
+            so 8 + 4 = 12
+
+    Changing input size will not affect this so;
+    Answer: O(1)
+
+2) 
+    function sumOfNumbers(int arr[], int n){    
+        sum = 0
+        for(i = 0 to n){
+            sum = sum + arr[i];
+        }
+        print(sum)
+    }
+
+    input: int array of size n: 4n
+            1 integer : 4
+    output: int sum: 4
+            int i: 4
+            print() call: 1
+    Total = 4n + 4 + 4 + 4 + 1
+    Answer: O(n)
+
+Why we do not consider input space?
+-> Input space is out of ur control; we can only control auxillary space hence we only consider auxillary 
+space
+
+3) Factorial by iteration
+    int fact = 1;
+    for(int i = 1; i <= n; ++i){
+        fact *= i;
+    }
+
+    return fact;
+
+    Anwer:
+        fact: 4
+        i: 4
+        n: 4
+        4 + 4 + 4
+        => O(1) 
+
+
+4) Factorial by recursion
+    if(fact <= 1){
+        return 1;
+    }
+    else{
+        return n * factorial(n - 1);
+    }
+
+    Answer:
+        fact: 4
+        n: 4
+        recursion calls: 8*n (address is stored inlong hence 8 Bytes)
+        total: 4 + 4 + 8*n
+        => O(n)
