@@ -1,0 +1,3 @@
+We know total subarrays for a given array is: n * (n + 1) / 2
+
+To print all subarrays, we need to fix any single element and go upto the end and return all subarrays from that element, then repeat for all elements in the array.

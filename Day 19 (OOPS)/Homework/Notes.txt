@@ -1,0 +1,118 @@
+The main aim of OOPS is to bind together data and functions such that only these functions can access 
+the data (in order to ensure privacy).
+
+Class: These are basically user defined data types and member functions associted with them. This data and
+        functions are only accessible by creating instances of that class.
+
+Object: A class when it is made (written in code) no memory is allocated to it, it is done when we create 
+        an object of it (instantiate a class).
+
+Encaptulation: In OOPS, this refers to the binding together of associated data members and member 
+                functions.
+
+Abstraction: Abstraction is hiding of functional details and displaying only essential details. This in
+            C++ is done via:
+                1) Abstraction via header files
+                2) Abstraction via classes.
+
+Polymorphism: This refers to the ability to display message in more than one ways. In C++ can be done in:
+            1) Operator Overloading
+            2) Function Overloading
+
+Inheritance: The capability of a class to inherit properties form another class is called inheritance,
+
+Dynamic Binding: Here the function to call is decided at runtime.
+
+Constructors: A constructor is a member function used to instantiate objects of a class. C++ automatically
+            creates a constructor if you do not explicitly create one. Types of constructors:
+                1) Copy Constructor
+                2) Default Constructor (No Parameters)
+                3) Parameterized(User Defined Only)
+
+Destructors: This is called when an object is being deleted. Dereived class instructor will be invoked 
+            first followed by the base class destructor.
+
+Access Modifier: Types:
+    1) Public: Can be accessed by any class program.
+    2) Protected: Can be accessed only by the class and the child classes.
+    3) Private: Can only be accessed by the current class. (default for a class)
+    4) Friend: A non subclass that can use private and protected functions of a given class.
+
+Types of inheritance:
+    1) Single Inheritance:
+        A -> B
+    2) Multilevel Inheritance:
+        A -> B -> C
+    3) Multiple Inheritance:
+        A -> B
+        C_|
+    4) Heirarchal Inheritance:
+        A -> B
+        |->C
+    5) Hybrid Inheritance:
+        Combination of multiple types of inheritance.
+
+Polymorphism: Types:
+    1) Compile Time Polymorphism:
+        a) Function Polymorphism
+        b) Operator Polymorphism
+    2) Runtime Polymorphism:
+        Overriding happens when user creates a class where there is an alternate definition of a class 
+        than one previously defined.
+
+Advantages of Data Abstraction:
+1) Avoid code duplication and increases reusabilty.
+2) Can change internal implementation of class without affecting the remaining program.
+
+Structure Vs Class:
+    We can specify access conditions in the class but not in structure.
+
+Local Classes in C++:
+    These are classes that are specific to a function. All local methods of the class can be defined in 
+    class only.
+
+Virtual Function:
+    These are defined in the base class and may be overriden by the child class.
+
+Exception Handing:
+    Try: Code that might throw an error.
+    Catch: Code to run whenerror is thrown.
+    Throw: Used to thrw an exception.
+
+Inline Functions: 
+    It works as a request instead of a functio call and replaces the line where it was called to the 
+    line that called it (with some few obvious alterations).
+
+Function Overloading: 
+    A concept in C++ wherein you can create multiple definitions for the same function name by altering 
+    the function signatire (name + parameter list).
+
+Difference Between C And C++:
+C:
+    1) C supports procedural programming.
+    2) C does not support OOPS and any supported concepts.
+    3) C's keywords are a subset of C++'s keywords and are a total of 32.
+    4) It is a function driven language.
+    5) Function and Operator Oveloading is not supported in C.
+    6) C does not support exception handing.
+C++:
+    1) C++ is a hybrid language and supports both procedural and object orented language.
+    2) C++ supports all concepts of OOPS.
+    3) C++ has 52 keywords.
+    4) C++ is an object driven language.
+    5) C++ supports operator and function overloading.
+    6) C++ supports exception handing in try and catch.
+
+Structure: Collection of dissimilair objects.
+
+Static members in C++:
+    Static variables in a function:
+        A function declared static is allocated for the whole duration of the program. Even if we call
+        a function multiple time, the space is allocated only once.
+
+    Static variable in a class:
+        Also called class member values, these are declared within a class. Like static functions, these 
+        belong to the class as a whole.
+
+    Static function in a class: 
+        These can only access other static functions and values, otherseise same as static data members.

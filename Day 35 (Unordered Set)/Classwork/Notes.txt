@@ -1,0 +1,38 @@
+Unordered Set and maps store data such that there are no indices to retreive data by, here we instead use hash functions, this is done so that searching, sorting and updation takes O(1) time, complexity wise.
+
+Hahing is a function that returns a value based on input, eg:
+hash(String s) = Sum of ASCII values of each charachter of the string.
+
+The most efficient thing about arrays was that given an index we can retreive data at O(1), we can use this but by using searching at O(1) by use of a hash function.
+
+Say we want to store "ABC" the hash value for this comes to be 65 + 66 + 67 = 198
+Now also say that our array is of size 8 so in order to allocate space we use storage via vaale % size here 198 % 8 = 6
+
+Similarly for "DEF" = (68 + 69 + 70) % 8 = 7
+
+Note: We are using a function here not a hash map so there is no increase in space. (Remember: Functions do not have an existence until they are called)
+
+But again, note that we can only store a value here once else hash value will repeat and storage is not possible, hence in unordered_maps the storage is permitted only once per elemenet.
+
+We must make hash functions properly by taking care of all collisions. To handle them:
+1) We try to minimise collisions. (by appling linear probing, quadratic probing, chaining (most important))
+2) Even so when collisions occur: we implement sets so that in places of collisions we use linked lists so that miultiple values may be stored at the same index.
+
+During insertion go to position and check id value is NULL, is yes then just insert, if not, then traverse linked list to confirm that there are no matches to current element, if none found, insert at end. If there are repeats then delete current element.
+
+Insertion, deletion and search all are of equal complexity here.
+
+In worst case, the hash function is bad and all elements will be at the same index and we need to traverse full list (all current elements in map) to do any operation. So complexity comes to be O(n).
+
+The above method of using linked list to store collided values is called chaining.
+
+To improve: we can improve hash function; one method is to take weighted sum (in our example), say we have ABC => 1 * 65 + 2 * 66 + 3 * 67
+But even so we will have collisions.
+
+To solve further we do this: if number of inserted elements exceed size by a factor (say 1.5) then we double size of array (like in vector)
+    factor = size/number of unique elements
+    if factor < 1.5 then expand
+
+when refilling the elements are arranged in new positions. 
+
+Note that in our implementation, we will use vectors instead of linked list such as to simplify code.

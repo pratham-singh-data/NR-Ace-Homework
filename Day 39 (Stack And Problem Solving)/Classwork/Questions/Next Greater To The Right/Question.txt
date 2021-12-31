@@ -1,0 +1,22 @@
+We need to dfind the next greatest to the right.
+
+say we are given:
+    5 3 8 1 6 4 2
+    indexes here go from 0 to 6
+    at 6: next greatest to right does not exist so output is 7 (because it is out of bounds and assumed infinity)
+    at 5: next greatest to right does not exist so output is 7 (because it is out of bounds and assumed infinity)
+    at 4: next greatest to right does not exist so output is 7 (because it is out of bounds and assumed infinity)
+    at 3: 6, 4, 2 are all eligible, 6 is closest hence chosen, output is 4
+    at 2: next greatest to right does not exist so output is 7 (because it is out of bounds and assumed infinity)
+    at 1: 8, 6, 4 are eligible hence seleced, output is 2
+    at 0: next is greatest is 8 at 2
+
+Solution:
+    traverse from right and store each into a stack.
+    for each element pop() is stack[top] <= arr[i] as then it is impossible for it to be next greater for anthing hereon.
+    is stack is empty fill with 7
+
+    We need to store more than one element in stack as we are looking for local greater and not universal greater, no criterion for replacement can be used that ensures that an element is not next greater for any further encountered value
+
+Time Complexity:
+    Inner loop will only delete each element once so inner loop executes to tal n times so complexity is O(n)

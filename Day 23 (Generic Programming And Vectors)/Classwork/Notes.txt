@@ -1,0 +1,46 @@
+Generic Programming: We will learn this by example of vectors.
+
+Vectors can be taught of as a resizable (dynamic) array. In a normal array if we fill the full array, in 
+order to fill more, you just need to use a new array, linked list does away with it but in order to use 
+that we need to have O(n) time to access an element while array does the same in O(1). what if we want both.
+
+Then we use vectors. Here if the array is filled and still more elements are to be added, the next elements
+is added by first creatng a new array of the double the size of the previous one, and filled with copy of 
+all elementsin that array then the new element is added in O(1) time again.
+
+On average, the create new array and copy old array operation is repeated log(n, 2) times for given n inputs.
+These cases cause insertion time to be O(n) while for all others the complexity is O(1). Hence we say that
+insertion time is still O(1). (We neglect the O(n) cases due to their low frequencies)
+
+Memory wastage for some time is neglected due to the features it offers in exchange.
+
+To implement:
+    arr[]: The actual array
+    counter: Current element
+    currSize: Current size of arr
+
+    push_back(): insert into array, if counter == maxSize; doubel the size an copy then insert
+    pop_back(): move counter back by one, if counter == currSize/2, deallocate memory and make 
+                array of half size of current, use create and copy again.
+
+Now what id we want to make a vector for different classes like int and float, this may cause creation 
+of thousands of classes and in order to implement user defined classes, we need to make our own vectors, 
+to remove this we use vectors, here the type of the class is decided at runtime.
+
+To do this:
+    template <typename>
+
+use typename throughout the program and when calling use 
+    vector<int>
+
+int here is used to replace typename in program code for vector.
+
+In vectors instead of actually creating arrays we will create a pointer to an array as then that array 
+could easily be deleted and replaced by a new array by replacing the location the pointer is pointing 
+towards.
+
+Remember due to typecasting in integers:
+when comparing instead of:
+    x == y / 2; 
+use: 
+    2 * x == y

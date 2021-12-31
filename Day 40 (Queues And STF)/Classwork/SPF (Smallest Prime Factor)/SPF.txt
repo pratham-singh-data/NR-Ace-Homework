@@ -1,0 +1,20 @@
+This is a modification on prime seive (Seive of Eratosthenes; I am not going to write this everytime hence we are sticking with this)
+
+make the seive array:
+    1 2 3 4 5 6 7 8 9
+
+keep arr[0], arr[1] as themselves
+
+2 onwards turns all multiples into that prime eg:
+    1 2 3 2 5 2 7 2 9 2
+
+At 3, we do the same but here as 6 is also a multiple of 2, keep value at that as 3 as it is already having a lower value.
+    1 2 3 2 5 2 7 2 3 10
+
+Now once we do it we can use this for factorisation as such:
+    pf(300) = 2 * pf(150)
+    pf(150) = 2 * pf(75)
+    pf(75) = 3 * pf(25)
+    pf(25) = 5 * pf(5)
+    pf(5) = 5 * pf(1)
+    pf(1) = 1; terminate

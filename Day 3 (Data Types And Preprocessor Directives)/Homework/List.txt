@@ -1,0 +1,5 @@
+1) Make a file (non-cpp) to write a code and execute it using a cpp file. (using #include)
+
+2) Make a program to implement Macro Expansion
+
+3) Use all basic datatype. (int, float, double, long, char, string)

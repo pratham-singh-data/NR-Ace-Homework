@@ -1,0 +1,47 @@
+As we know both int and float are 4 byte long so in order to differentiate between blocks of memory 
+assigned to both, compiler uses a symbol table. Here each entry is the symbol compared with ite 
+corresponding dtype and it is referred during calls to tell how to parse each symbol. The table is very 
+fast and it parses in the range of O(1).
+
+Pointers are used to point to a data type and hold the adress location corresponding to a data. It is just
+a memory (or variable) that is storing the address of another memory location (or variable). 
+
+Note the symbol table, due to using hash map is faster and does not need to use pointers.
+
+Addresses are hexadecimal numbers in the format 0x<number>. To convert you arrange remainders of division 
+with 16 in reverse. e.g. Decimal 77 comes to be the hexadecimal number 0x4D.
+
+To retrive address of a variable, ampersand operator is used, eg: address of a is retreived by &a.
+
+    Q: Why we need addresses?
+    -> To look for a person in a society we have two ways, we get their address and reach that address.
+        or you know someone from his house and from them get to their house.
+        Accessing the variable is by knowing address ourselves while pointers is when we have address 
+        of someone who knows their location.
+
+To store address we need a variable that tells that it is not storing a variable but a variables address.
+for this we use pointers. int is an integer storage, int* stores the address of an int storage.
+
+* may also be used to access data in a location. *a is read as "value at a".
+
+All addresses are 4 bytes long, n matter which datatype they are pointers of. As they are just storing 
+hexadecimal numbers.
+
+But that does beg the question: What is the point of telliing which datatype an address belongs to?
+Note:
+int a = 10;
+int *p = &a; // This works
+char *q = &a; // This does not works
+
+Now why is that so; This is because pointers store the first byte's address, so whenwe access its data it
+will access the first byte and depending on the dtype, specific parsing is done, so using a pointer of another 
+type will just return a garbage value.
+
+Void Pointers: These are generic pointers and can store the address of any memory.
+Drawback of void pointer: A pointer is supposed to both stoe the type of data as well as the address to it,
+So in order to read the data here, we need to parse it to a specific type of pointer.
+So the drawback is if we do not know what the pointer is pointing to, we could get a garbage value.
+
+Problem with characters pointers: in cout when we try to pass the address of a char data, cout reads the 
+data at that point till it can. This is not done with any other dtype.
+This can be solved by using void pointer as cout doesn't know it is a char pointer so it cannot read it.

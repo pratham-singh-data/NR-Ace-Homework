@@ -1,0 +1,24 @@
+Think of a function as a real life function (a party):
+1) You tell everyone a function is about to happen; this is the function declaration.
+2) You tell what is about to happen in the function; this is the definition of the function.
+3) All the above are useless if the function never takes place, hence now we must call the function, 
+which is when we execute the definition above.
+
+Function (in computer) is defined as a logical unit of work.
+
+To write a function in C++:
+return_type name(parameter list comma seperated){
+	code; tells what work is to be done
+}
+
+local variables: only work within a part of code 
+global variables: work globally
+
+Scope Resoltion Operator: Used to call a specific scope variable. ::v calls the global v 
+after deinition of a local v
+
+When defining a function, declaration is optional as definition covers its purpose.
+It is still needed when we define a function below the main function or wherever it is called.
+
+						Define function in namespace
+Namespaces work like classes.

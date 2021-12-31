@@ -1,0 +1,15 @@
+Use unordered map:
+    You will be given n integers
+    then a number k
+    u have to print all those unique numbers whose frequency is > k
+    output should be in a sorted order
+    eg:
+        input:  10
+                1 5 1 3 1 2 2 6 5 3
+                3
+        output: 1
+
+        input:  10
+                1 5 1 3 1 2 2 6 5 3
+                2
+        output: 1 2 3 5

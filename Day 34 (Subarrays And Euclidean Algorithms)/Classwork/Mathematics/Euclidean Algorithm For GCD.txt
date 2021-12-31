@@ -1,0 +1,32 @@
+if gcd(x, y) = g
+then: (x = m * g) and (y = n * g) 
+
+so x - y = (m - n) * g
+so gcd(x - y, y) = g and gcd(x - y, x) = g
+i.e x, y and x - y  are cofactors.
+
+keep going like this...
+Now let's go like this
+gcd(a, b):
+    gcd(a-b, a) if a < b
+    gcd(a-b, b) if b < a
+    equality is your choice
+
+eg: for 8 and 12
+    gcd(8, 12) => gcd(4, 8) => gcd(4, 4) => gcd(4, 0) after this numbers become negative, which is meaningless, the iteration stops when one value equals 0.
+
+also we know; gcd(x, 0) = x
+
+so when one number equals to 0 the other number is our result. To do so:
+
+x % y = remainder of x / y 
+if you notice the swap in what subtracts is at remainder of divison greater / lesser. so instead use the formula:
+    gcd(a % b, b) if a > b
+    gcd(b % a, a) if b > a
+Also, notice that this is the long divison method of getting GCD.
+
+let's compare:
+gcd(18, 30) => gcd(12, 18) => gcd(6, 12) => gcd(6, 6) => gcd(0, 6)
+gcd(18, 30) => gcd(12, 18) => gcd(6, 12) => gcd(0, 6)
+
+This reduces time complexity to O(log(min(x, y)))

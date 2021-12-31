@@ -1,0 +1,34 @@
+Course Structure:
+First 2.5 months: 
+1. C++ Basic, STL And Basic DSA
+2. OOPS
+3. DSA Basics (array, linked list, tree, queue, stacks etc.)
+4. Number Theory
+5. Time Complexity Analysis
+6. BAsic Recurrsion
+7. Greedy Algorithm
+8. All Sorting Algorithms
+9. Bit Manipulation
+
+Intermidiate Part (remaining of time):
+1. Advaned DSA, Greedy Problems, fenwick tree etc
+2. Advanced Number Theory
+3. Armitized Time Complexity Analysis
+4. Divide And Conquer Techniques
+5. Sieve Of Eratosthenes
+6. Advanced Dynamic Prgrammings
+7. Digit Dp
+8. Application of matrix chain multiplication
+9. How to use matrix exponentiation on DP
+
+Expectations:
+1. Solve all practice problems. (1 - 1.5 Hours)
+2. Try to attend live classes. (75% of all classes)
+3. Don't share resources. (Personnal Request From Raveet Sir)
+
+What to expect:
+1. No Regrets.
+2. Job and Placement oppurtunities will be shared.
+
+How To Apply:
+1. Store solutions in github repositories (they will check)

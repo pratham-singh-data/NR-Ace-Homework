@@ -1,0 +1,69 @@
+Like conditional statements loops are used to change the flow of a program as per our requirements.
+
+Important parts/properties of a loop:
+1) Initisation (It tells the starting point of the loop)
+2) Updation (Tells how loop progresses; hopefully towards the termination clause)
+3) Termination (it tells where loop is to stop)
+
+eg: in an AP:
+Initialisation -> a
+Updation -> a + d
+Termination -> an (value at t = n)
+
+Infinite Loop: Condition where no end point could be found. It is prevented by setting an aprropriate
+termination point. We mostly have no use of it. (No usually, it is useful in game development, GUI design 
+etc., no uses in competitive coding, in real life there are a lot of uses of infinite loops.)
+
+In an example of a robot that must pick all items from a list before termination condition, the loop it will
+run will resemble:
+
+while(remaining items to be bought is not zero)
+    go to the store.
+    buy the item.
+    get the item home.
+
+here:
+1) Say we need to buy Apples, Grapes and Grapefruit. At start counter will start from 3.
+2) Loop will run and Grapefruit will be bought home, counter is not zero rather it is 2. Loop runs again.
+3) Grapes is bought home, counter updates to 1 rather than zero. Loop again.
+4) Apples is bought. Counter updates to 0.
+5) Terminate Loop.
+
+Loops in program:
+Using this prevents tedious repitative codes (like to print name 100 times).
+
+Types of loop: (Difference is in structure only, all have same properties)
+1) While Loop: A basic entry control loop.
+
+Initialisation;
+while(condition){
+    work;
+    updation;
+}
+
+2) Do - While Loop: One extra run if initial run failed condition check as it is exit controlled, otherwise 
+same as while and for loops.
+
+Initialisation;
+do{
+    work;
+    updation;
+}while(condition);
+
+3) For Loop: More concise way to write a while loop, otherwise same as while loop.
+
+for(initialisation; condition; updation){
+    work
+}
+
+In for:
+initialisation only executes once, followed by condition and updation repeatedly in that order.
+
+In Generaal:
+Initialisation runs 1 times
+Condition runs n + 1 times; n positive results and 1 negative results on termination.
+Updation runs n times.
+
+Exit Controlled Loop: Here condition is checked at the end (Do- While)
+Entry Controlled Loop: Here condition is checked at the start of iterations (For and While loops)
+

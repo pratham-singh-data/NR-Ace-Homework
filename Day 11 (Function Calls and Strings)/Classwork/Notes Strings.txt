@@ -1,0 +1,16 @@
+String are a collection of charachters. Here each charachter is stored in a seperate byte(as char 
+takes one byte) and ends with the null charachter (\0). Whenever cout encounters \0 it will stop 
+printing the string. It can be thought of a charachter array terminating in a \0.
+
+We can replicate it by actually making a char[] and ending the actual data with a null charachter.
+
+Note: The pace for variables in a proogram are allocated close to each other for easy and quick access.
+So creating a new charahcter near a char array may make it start behaving like it ia a part of a string as
+a part of the string as well.
+
+String methods:
+1) s.length()   returns length of s.
+2) s.push_back(x)    appends charachter x to the string
+3) s.pop_back()    deletes last element in the string but unlike other pop() does not returns it.
+    causes segmentation fault in case of underflow.
+4) append(x)    inserts strig x at the end. (push_back() works on only one charachter)

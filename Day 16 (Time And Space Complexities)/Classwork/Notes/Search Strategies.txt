@@ -1,0 +1,110 @@
+Say we have an array with elements:
+    2 3 4 8 10 12 99 100 210
+
+We can obeserve that the elements are sorted in an ascending order. Say here we are told to search for
+x = 100; one way is to search from 0th index to wherever it is found (linear search). At each iteration:
+
+1) If current element is not the required element it is present only in indices n - curr as curr starts 
+from 1. After each iteration total possible elements decrease by 1. So maximum possible iterations is n
+(total elements).
+
+    Algorithms: Set of instructions that when executed in a specified order performs an action.
+    Worst Case: The case when we have to the most work. Here that would be element is not in the array.
+
+The above method can be improved using Binary Search:
+2) Binary Search: Here we use the property that the elements are sorted. if we take:
+    low = lowest index of current iteration
+    high = highest index of current iteration
+
+    at each pass calculate:
+    mid = (low + high) / 2 
+    this gets floored by property of the language (int dtype)
+
+    if current is not target the:
+    a. if current is greter than target then there is no way target is present to the right of the current
+        value so we need not look at those values.
+            Update:
+            high = mid - 1
+    b. if current is lesser than target then there is no way target is present to the left of the current
+        value so we need not look at those values.
+            Update:
+            low = mid + 1
+    
+(updates can be switched for descending order)
+
+Time Complexity of binary search:
+We observe that the termination will be after only one element remains, to reach that we clculate:
+    each run reduced size of array by 2 so say the xth iteration reduces to 1;
+    n/pow(2, x) = 1
+    n = pow(2, x);
+    x = log(n, 2)
+
+So we say that the time complexity of this is O(log n)
+
+Time complexity in linear Search:
+    At each run we need to look at each element till value is found, hence in worst case the lookups need
+    be equal to n. Hence complexity is O(n).
+
+Comparison of binary and linear search:
+Say we have 1000 elements then for non existent elements
+1) Linear search has 1000 lookups
+2) Binary Search has 10 lookups
+    Hence we can observe that binary search is far more optimized when compared to linear search.
+
+Requirements for binary Search:
+1) Only runs on sorted array
+This is the only requirement.
+
+Pseudocode for binary search:
+    int l = 0, h = n - 1;
+    while(l <= h){
+        int mid = (l + h) / 2;
+
+        if(arr[mid] < x){
+            l = mid + 1;
+        }
+        else if(arr[mid] > x){
+            h = mid - 1;
+        }
+        else{
+            cout << "Element is found";
+            break;
+        }
+    }
+
+Test performace:
+1)  Target = 8 (element exists)
+    Iter 1: low = 0, high = 8
+            mid = (0 + 8) = 4
+            arr[4] = 10 > target
+            high = 3
+
+    Iter 2: low = 0, high = 3
+            (0 + 3) = 2
+            arr[2] = 4 < target
+            low = 3
+
+    Iter 3: low = 3, high = 3
+            mid = (3 + 3) / 2
+            arr[3] = 8
+            terminate and return true
+
+2)  Target = 7 (non-existent element)
+    Iter 1: low = 0, high = 8
+            mid = (0 + 8) = 4
+            arr[4] = 10 > target
+            high = 3
+
+    Iter 2: low = 0, high = 3
+            (0 + 3) = 2
+            arr[2] = 4 < target
+            low = 3
+
+    Iter 3: low = 3, high = 3
+            mid = (3 + 3) / 2
+            arr[3] = 8 > target
+            high = 2
+
+    Iter 4: low = 3, high = 2
+            low > high
+            terminate and return false (Not found)

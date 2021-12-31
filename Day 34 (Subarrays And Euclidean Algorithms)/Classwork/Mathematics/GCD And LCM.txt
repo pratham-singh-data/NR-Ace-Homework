@@ -1,0 +1,80 @@
+LCM: Lowest Common Multiple
+HCF: Highest Common Factor
+
+a * b = LCM * HCF
+
+GCD: Greatest Common Divisor
+It is the same as HCF
+
+Say we are given 20 and 24;
+20 = 2 * 2 * 5
+24 = 2 * 2 * 2 * 3
+Common = 2, 2
+so; 2 * 2 = 4
+hence; GCD = 4
+
+But, how to implement this.
+1) Get prime factorisation of a and b
+2) Take common in both of them.
+3) Multiply the commons.
+Yes, that is one way.
+
+But for step 1 we need the factors; ways to do this are:
+1) Run a loop between 2 and n (where n is that number), return earliest number till then that returns n % i == 0, then update n and calculate again.
+    But this takes a long time.
+    We need only go upto sqrt(n) as sqrt(n) * sqrt(n) == n. so if no factor is found till then, there are no factors after it either.
+
+Prime Number: Numbers that are divisible by only 1 and itself. Eg: 15 is also divisible by 3 and 5 so it is not prime, 7 is prime as it is only divisible by itself and 1.
+
+1 is neither composite nor prime.
+
+so if we take a range:
+2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+the primes here are:
+2, 3, 5, 7, 11, 13 and 17
+
+we may also say that primes only have 2 factors.
+
+Factorisation may be done in many ways; one is decomposition (the general way):
+    12 -> 3 * 4
+        > 3 * 2 * 2
+        or 6 * 2
+        or 12 * 1
+    
+    in all methods accept prime factorisation, there is ambiguity as all numbers except the last may also be further decomposed. Hence due to simplicity, we always perform prime factorisation.
+
+code for finding whether we have a prime or not:
+for(int i = 2; i < n; i++){
+    if(n % i== 0)
+        return false
+}
+
+If we go past the sqrt(n) in prime factorisation, we can notice that it starts to repeat factors eg:
+64 -> 2 * 32
+    > 4 * 16
+    > 8 * 8
+    Then it just repeats
+    > 16 * 4
+    > 32 * 2
+
+So we need only check till less than sqrt(n) as equal to sqrt(n) can simply be checked by whether or not sqrt(n) is a natural number is yes then it is already not a prime. Though you may just run the loop for <= sqrt(n) in order to avoid complicating the code.
+
+Also we can say by the same property that if a divisor greater than sqrt(n) exists then a root less than sqrt(n) also exists.
+
+To avoid error cause by typecast to int write this loop as:
+    for(int i = 2; i * i < n; i++)
+The time complexity here of O(sqrt(n))
+
+A better method of O(log(n)) will be discussed later...
+
+Now to find prime factors of a number n.
+
+Sqy we are given 24, first it divides 2: so push_back 2 then affter that update i as i /= 2 and repeat the calculations until it is no longer divisible by 2 then move on to the next number.
+
+Now to calculate GCD: we need to calculate the factors of both numbers, find commons and multiply them. Time complexity thus is time to find both so O(sqrt(n) + sqrt(m)) but a better method is the extended euclidean algorithm.
+
+<see Code file>
+
+But this is not optimal. Say we are given (100, 25);
+    (100, 25) => (75, 25) => (50, 25) => (25, 25) => (0, 25)
+Here we used 25 four times, can we do it only once. 

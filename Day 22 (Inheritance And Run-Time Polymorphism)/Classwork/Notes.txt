@@ -1,0 +1,252 @@
+Inheritance can be linked to real life objects wherin we can pass posessions (data memebers) as well as 
+biological traits (methods) to children (sub-classes).
+
+Eg: Think of the class Human
+class Human{
+    int legs;
+    in hands;
+    int height;
+}
+
+class Boy{
+    int legs;
+    in hands;
+    int height;
+}
+
+Notice that we had to repeat legs, hands and height in our code this must be avoided.
+
+We know all boys are humans. So with this knowledge we can inherit Human. By inheriting despite us not 
+directly giving legs, hands and height to boy, it still has it due to inheritance from Human. Hence inheritance
+offers code reusablity.
+
+Types of inheritance:
+1) Single Level Inheritance.
+    Human -> Boy
+    Only two classes involved
+
+2) Multi Level Inheritance.
+    Human -> Boy -> Student
+    More than two classes involved
+
+3) Multiple Inheritance.
+    Boy     Girl
+        \   /
+         Student
+    Single Class inherits two or more classes
+
+4) Hierarchal Inheritance.
+        Human
+        /   \
+    Boy      Girl
+    Single class has multiple children
+
+5) Hybrid Inheritance.
+    A combination of the above. Eg: Ring topology, semantic network etc.
+
+Protected Access Specifier: Can only be used by tself and its subclass and no one else.
+Private is hared to no one even sub classes, protected may be inherited into child classes.
+            Itself      subclass    other class
+Private     True        False       False
+Protected   True        True        False
+Public      True        True        True
+
+Note: On inheritance acess specify cannot be made more general but it can be increased.
+if public is inherited; it can become public, protected or private.
+if protected is inherited; it can become protected or private.
+private cannot be inherited.
+
+To access private methods we use getter and setter methods.
+
+Note: Even though private and protected methods are renderred inaccessible, they are still inherited,
+they just cannot be used, hence size is still equal to size of all private + protcted an public values.
+
+Syntax:
+    class child: <access> parent
+here <access> can be:
+protected: public + protected are inherited and turned to protected
+public: public is inherited and turned to public and protected is inherited and stays protected as access 
+        cannot be relaxed.
+private: public and private are inherited and turned to private.
+
+private is the default access Specifier in a class.
+
+
+Generalisation: 
+    As we go up an inheritance line Generalisation increases. Eg: Boy is less general than 
+    Human, Student is less general than boy etc.
+
+Specialisation: 
+    As we go down an inheritance line Specialisation increases. Eg: Boy is more secific than 
+    Human, Student is more specific than boy etc.
+    Now consider:
+        A -> B -> C
+    
+    we can use:
+        A* a = new B();
+    A can be a pointer of B as A is more general than B and can point to B, but as it is a pointer of A,
+    it cannot access methods of B that are not in A. This is compile time binding.
+
+Runtime binding/ runtime polymorphism:
+    Here we use the virtual keyword to make it so that it works dynamically and use the method of the child
+
+Example:
+Compile Time Binding:
+    Code:
+        #include<iostream>
+        using namespace std;
+
+        class A{
+            public:
+                void hi(){
+                    cout << "Hello from A.\n";
+                }
+        };
+
+        class B: public A{
+            public:
+                void hi(){
+                    cout << "Hello from B.\n";
+                }
+        };
+
+        int main(){
+            A* obj = new B();
+            obj -> hi();
+            // compile time binding as hi() did not get overridden by child pointer.
+
+            return 0;
+        }
+
+    Output: 
+        Hello from A.
+
+Runtime Binding:
+    Code:
+        #include<iostream>
+        using namespace std;
+
+        class A{
+            public:
+                virtual void hi(){
+                    cout << "Hello from A.\n";
+                }
+        };
+
+        class B: public A{
+            public:
+                void hi(){
+                    cout << "Hello from B.\n";
+                }
+        };
+
+        int main(){
+            A* obj = new B();
+            obj -> hi();
+            // runtime binding as hi() gets overridden by child pointer due to virtual keyword.
+
+            return 0;
+        }
+
+    Output: 
+        Hello from B.
+
+virtual makes it so that the method if present in pointer then that function is called instead of 
+present function.
+
+Note that virtual does not cascade, it used the function of the child either direct or indirect if the 
+actual class's function is virtual eg:
+        #include<iostream>
+        using namespace std;
+
+        class A{
+            public:
+                virtual void hi(){
+                    cout << "Hello from A.\n";
+                }
+        };
+
+        class B: public A{
+            public:
+                virtual void hi(){
+                    cout << "Hello from B.\n";
+                }
+        };
+
+        class C: public B{
+            public:
+                void hi(){
+                    cout << "Hello from C.\n";
+                }
+        };
+
+        class D: public C{
+            public:
+                void hi(){
+                    cout << "Hello from D.\n";
+                }
+        };
+
+        int main(){
+            A* obj = new D();
+            obj -> hi();
+
+            return 0;
+        }
+
+        Output:
+            Hello from D.
+
+Here notice that virtual did not cause a cacade till C which was not virtual and use its hi(), it 
+strightaway replace hi() with the hi() of the indirect child D() as that was the type of the pointer, it 
+also would not matter if D's hi() was also virtual, that hi() will be used nonetheless.
+
+virtual runs the closest to pointer's type. eg:
+        #include<iostream>
+        using namespace std;
+
+        class A{
+            public:
+                virtual void hi(){
+                    cout << "Hello from A.\n";
+                }
+        };
+
+        class B: public A{
+            public:
+                virtual void hi(){
+                    cout << "Hello from B.\n";
+                }
+        };
+
+        class C: public B{
+            public:
+                void hi(){
+                    cout << "Hello from C.\n";
+                }
+        };
+
+        class D: public C{
+            public:
+                void hello(){
+                    cout << "Hello from D.\n";
+                }
+        };
+
+        int main(){
+            A* obj = new D();
+            obj -> hi();
+
+            return 0;
+        }
+    
+    Output:
+        Hello from C.
+
+Runtime Polymorphism: 
+    This is acheived by function overridding or polymorphism as here the child's function replaced the 
+    parent's function at runtime.
+
+Compile Time Polymorphism:
+    This is done by operator overloading or function overloading as here polymorphism is acheived at 
+    compilation of class definition and not at runtime i.e. when an object of the class is created.

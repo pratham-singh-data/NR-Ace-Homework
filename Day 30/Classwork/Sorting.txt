@@ -1,0 +1,16 @@
+Sorting ALgorithms:
+1) Selection Sort
+2) Insertion Sort
+3) Bubble Sort
+
+O(n logn):
+1) Merge Sort
+2) Quick Sort
+3) Heap Sort
+
+O(n) (time) + O(n) (space):
+1) Counting Sort
+2) Radix Sort
+
+Sorting is basically bringing in a simplified form with recognizable patterns. In programming this could be 
+ascending order, descending order etc.

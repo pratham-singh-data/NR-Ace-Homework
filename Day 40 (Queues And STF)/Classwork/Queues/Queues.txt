@@ -1,0 +1,59 @@
+Remeber how in stacks we could only manipulate the last added element, in queues we only manipulate the oldest element i.e. it implements LIFO (Last In First Out)
+
+Operations:
+    enqueue() => add elements to end
+    dequeue() => remove elements from head
+
+here we need two elements:
+    one that points to start of queue. (front)
+    one that points to the end of queue. (rear)
+
+void enqueue(int e){
+    rear++;
+    arr[rear]=e;
+}
+
+    O(1)
+
+int dequeue(){
+    front++;
+    return arr[front];
+}
+
+    O(1)
+
+int front(){
+    return arr[front + 1];
+}
+    O(1)
+
+Now, while this works, there is wastage of space as the array cannot be reused until the full array is empty. To resolve this we implement stacks using linkedlist
+
+Note: Another resolution is via circular queue, here we use modulo operator to determine indices.
+here;
+    full => rear==front && front == -1
+    empty => front == (rear + 1) % N
+
+In linked list queue:
+1) when one element is left both front and rear point to the same node.
+2) Insertion: InsertAtEnd()
+3) Deletion: DeleteFromStart()
+But here insert => O(n) and delete => O(1)
+
+To optimise insertion we use a second pointer that points to the end of the list.
+
+enque(int element){
+    Node* ptr = new Node(element);
+    rear->next = ptr;
+    rar = ptr;
+}
+
+dequeue(){
+    int deleteed = front->data;
+    Node<T>* temp = front;
+    front = front->next;
+    delete temp;
+    return deleted;
+}
+
+As this is not a standard linked list we will have to make our own linked list as well.

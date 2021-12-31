@@ -1,0 +1,38 @@
+The memory is structured as:
+    heap
+    stack
+    variables
+    source code
+for any given program
+
+Whenever a function is called, it is put in stack and variables are copied and then executed, but say the 
+function is very small like:
+    return a + b
+
+The steps involved in its computation:
+1) Stack frame allocation
+2) Variable Copying
+3) Main Content
+4) Stack Frame Deletion
+
+The extra steps will take more time than the program itself, so we need to optimize this.
+
+That's where inline function comes in, here the code is entirely copied in the call location (like a macro),
+this makes execution faster as stack frames need not be created and variables need not be copied. This should
+not be used in large functions as in case of recurssive functions (where stack frames are mandatory), and also
+in large functions the macro copying itself causes lot of time to be consumed as alterations need to be made in 
+transforming from function code to inline code. 
+
+In compiler optimization, if a compiler sees that a function is not reccurrsive and is sufficiently small, 
+it is automatically made into an inline function, but to declare it explicitly we make use of the inline 
+keyword before function dtype in signature.
+
+Advantage of inline function:
+    It can be used in small functions where it increases speed as stack frames are no longer created (some
+    compilers automatically convert to inline based on certain criterion)
+
+Advantage of inline function:
+    Cannot be used for larger functions.
+    Should not be used in recurssive functions as it is mandatory to make stack frames here.
+    Inline functions are exclusive to C++; java, python and others uselambda functions to acheive the 
+    same effect.

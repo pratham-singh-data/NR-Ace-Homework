@@ -1,0 +1,43 @@
+Say we are given an array:
+    8 5 1 100 20 15 3
+
+Here we start by selecting index of the smallest element. Here we run a loop from 0 to 6 and retreive 
+index of smallest number:
+    min_index = 2;
+
+Swap min_index with starting index;
+    1 5 8 100 20 15 3
+
+Now we need only look from 1 to 6; repeating the proces gives:
+    1 3 8 100 20 15 5
+
+We observe that after each iteration; number of unsorted elements decreases by one.
+
+Third Iteration:
+    1 3 5 100 20 15 8
+
+Fourth Iteration:
+    1 3 5 8 20 15 100
+
+Fifth Iteration:
+    1 3 5 8 15 20 100
+
+Sixth Iteration:
+    1 3 5 8 15 20 100  
+
+Seventh Iteration:
+    1 3 5 8 15 20 100
+
+We observe that as iterations increase:
+1) Unsorted part decreases from n to 0
+2) Sorted Part Increases from 0 to n
+
+Steps:
+1) Find the minimum index in the unsorted part
+2) Swap the first element of unsorted part with the minimum index.
+
+Analysis:
+    As for each value the loop runs through all other elements this is O(pow(n, 2)) time.
+    As: n(n + 1)/2
+
+Note: Theta and O are almost always equivalent.

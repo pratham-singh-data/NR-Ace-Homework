@@ -1,0 +1,12 @@
+1) Program to find the factorial of a 
+
+2) Return sum till n of:
+    1^4 + 2^4 + 3^4 + 4^4 + .... + n^4
+
+3) Find sum till n:
+    1/2 + 2/3 + 3/4 + .... + n/(n + 1)
+
+4) Pattern 1
+5) Pattern 2
+6) Pattern 3
+4) Pattern 4

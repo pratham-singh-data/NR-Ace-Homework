@@ -1,0 +1,11 @@
+In a linked list we need:
+Member variables:
+    Head
+    Length
+Member Function:
+    Insert at start
+    Insert at end
+    Display
+    Delete at start
+    Delete at end
+    Size

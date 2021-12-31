@@ -1,0 +1,4 @@
+see file of iostream, ostream, istream
+setup VS Code (Done Look Around You)
+do namesapce code done in class (Done With Sir In class)
+learn basics of compiler design

@@ -1,0 +1,35 @@
+Till now all algorithms we used use comparision hence they are called comparision based sorting.
+
+Counting sort on the other hand does not do comparisions. Consider the array:
+    5, 3, 5, 1, 2, 3, 2, 4, 7, 6, 5
+
+Here we make an array of size equal to range of numbers (here that is 0 to 7) and in each index store the frequency of that element in the array by updating this value whenever that value is encounterred again on traversal. Here the value comes to be: (Starting is form 0 and it goes upto 7)
+    0 1 2 2 1 3 1 1
+
+Whenever our pointer points to any index the array we created tells the frequency of encountered numbers upto that position. Once the full array is traversed the array is storing the frequency of each element of the array.
+
+Now we need to tell which index each value is to be inserted at so we get a prefix array that is an array obtained by adding the previous element's sum to the current value the one of this is:
+    0 1 3 5 6 9 10 11
+
+Here each prefix[i] is telling how many values lie behind this value (including itself) eg: last 4 will be at the 6th index.
+
+Now make another temporary array of same size as the original array. Traverse the original array from the last position (to ensure stable sort), and fill according to corresponding position ( value in prefix array - 1) in the prefix array. On filling decrement the value at this position.
+
+In conclusion, steps are:
+1) Create Frequency Array.
+2) Create Prefix Array Of Frequency Array.
+3) Perform reverse traversal for sorted array.
+
+Complexities:
+    1) Time Complexity: O(n)
+        We are merely traversing the full array
+    2) Space Complexity: O(n)
+        Size of array is n
+
+    But this is wrong, we are making the prefix array based on size of max element so the actual complexity is:
+    1) Time Complexity: O(max element in array)
+    2) Space Complexity: O(max element in array)
+
+    So if the maximum sized element is say O(pow(10, 9)), even if we are able to allocate so much space even then the time complexity makes it unusable.
+
+So this algorithm is only usable if the numbers are in a normal range that is the max is O(max(10, 6)), Also this cannot be used for negative numbers as negative values are hard to handle as they cannot be indiced. (Still can be done if entire array is negative, we can convert to positive, sort in descending order then traverse final array and multiply all values with -1)

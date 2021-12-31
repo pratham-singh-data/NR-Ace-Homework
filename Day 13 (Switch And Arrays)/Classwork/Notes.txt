@@ -1,0 +1,17 @@
+Switch Case:
+switch(v){
+    case a: code; break;
+    case b: code; break;
+    and so on..
+    default: code
+}
+
+this tells code to run for each value of v, only equality could be checked though. This basically works 
+like a if else if sequence with the final else working like the final else in the sequence.
+
+Here the break statement tells that execution is to end here else. In absence of break statement, the 
+cases below the entry case also get executed, resulting in a fall through.
+Note: break is simply syntax, it is not a loop and using continue returns an error.
+
+Switch is more optimized than if-else as each key could get cached here. It can compare both strings and 
+int.

@@ -1,0 +1,87 @@
+Remember how we found that minimum complexity for dereivin primes was O(sqrt(n)), but there is a more efficient way this is by use of seive of erathosthenes, this is only good when prime is in the range [1, pow(10, 6)]
+(This takes a bit of preprocessing so we only do it when we have multiple queries on the same dataset)
+
+Say we are given the numbers:
+    1 2 3 4 5 6 7 8 9 10
+    11 12 13 14 15 16 17 18 19 20
+    21 22 23 24 25 26 27 28 29 30
+    31 32 33 34 35 36 37 38 39 40
+
+here primes are:
+    2 3 5 7 11 13 17 19 23 29 31 37 39
+
+In seive: we make an array of size pow(10, 6) with each position storing -1 with each value saying given is a prime.
+    -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+    -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+    -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+    -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+
+we know 1 is not a prime so replace it with 0
+    0 -1 -1 -1 -1 -1 -1 -1 -1 -1
+    -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+    -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+    -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+
+Now we reach 2 here we see a -1, now we can tell that all multiples of 2 are certainly not primes so we assign 0 to all multiples of 2.
+    To get multiples of a number n, run a loop till say 100 and get multiples for general an we say this method also works:
+        for(int i = N; i <= 100; i+=N)
+    as each increasing value differ by N
+    (This needs to be improved, i know it does not work)
+
+In seive:
+    once you encounter a -1, set all its multiples in the table to 0.
+    0 -1 -1 0 -1 0 -1 0 -1 0
+    -1 0 -1 0 -1 0 -1 0 -1 0
+    -1 0 -1 0 -1 0 -1 0 -1 0
+    -1 0 -1 0 -1 0 -1 0 -1 0
+    This loop would have run for n/2 times as all odds are ignored and evens are altered.
+
+Now we move onto 3, here if it is -1 that means there was no multiple before this else it would be made 0, so let's make it alterations:
+    0 -1 -1 0 -1 0 -1 0 0 0
+    -1 0 -1 0 0 0 -1 0 -1 0
+    0 0 -1 0 -1 0 0 0 -1 0
+    -1 0 0 0 -1 0 -1 0 0 0
+    Now also, if you notice, we made jumps of 3 in making this, so time was O(n/3)
+
+Now 4 is 0 so no traversal here, as all its divisors are checked.
+Next check will be on 5 so:
+    0 -1 -1 0 -1 0 -1 0 0 0
+    -1 0 -1 0 0 0 -1 0 -1 0
+    0 0 -1 0 0 0 0 0 -1 0
+    -1 0 0 0 0 0 -1 0 0 0
+    O(n/5)
+
+Next 7:
+    0 -1 -1 0 -1 0 -1 0 0 0
+    -1 0 -1 0 0 0 -1 0 -1 0
+    0 0 -1 0 0 0 0 0 -1 0
+    -1 0 0 0 0 0 -1 0 0 0
+    No alteration here
+    O(n/7)
+
+continue like this:
+    We see the complexity is:
+    n/2 + n/3 + n/5 + n/7 + ....
+
+    this is equivalent to n * log(log(n)) (by limit to infinity)
+    so O(n log(log(n)))
+
+So once preprocessing is done we can get whwther given is a prime or not in O(1)
+
+Note: To create the array of -1 s:
+    int isPrime[pow(10, 6)];
+    memset(isPrime, -1, sizeof(isPrime));
+
+Full code:
+    int isPrime[pow(10, 6)];
+    memset(isPrime, -1, sizeof(isPrime));
+    isPrime[0] = 0;
+    isPrime[1] = 0;
+
+    for(int i = 2; i < maxN; i++){
+        if(isPrime[i] == -1){
+            for(int mul = 2 * i; mul < maxN; mul += i){
+                isPrime[mul] = 0;
+            }
+        }
+    }

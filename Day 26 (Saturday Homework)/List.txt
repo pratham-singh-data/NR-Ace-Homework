@@ -1,0 +1,13 @@
+1.
+Finding the maximum/minimum element of the array using recursion.
+2.
+Finding the sum of all elements of the array using recursion.
+3.
+write down the recursive code to calculate the sum of series till n terms.
+1/2+ 2/3+ 3/4+ 4/5 +5/6 +.......
+4.
+write down the recursive code to calculate the sum of series till n terms.
+1!/2+ 2!/3+ 3!/4+ 4!/5 +5!/6 +.......
+5.
+write down the recursive code to calculate the sum of series till n terms.
+(1)/(1!)+ (1+2)/2!+ (1+2+3)/3!+ (1+2+3+4)/4! +(1+2+3+4+5)/5! +.......

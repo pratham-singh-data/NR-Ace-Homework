@@ -1,0 +1,23 @@
+Hello everyone, these are the 10 questions. Try to solve them and we are going to discuss them in the session.
+1.
+https://practice.geeksforgeeks.org/problems/segregate-even-and-odd-nodes-in-a-linked-list/0
+2.
+https://practice.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1
+3.
+https://practice.geeksforgeeks.org/problems/first-non-repeating-character-in-a-stream/0
+4.
+https://www.tutorialspoint.com/javaexamples/data_stack.htm
+5.
+https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/
+6.
+https://practice.geeksforgeeks.org/problems/implement-two-stacks-in-an-array/1
+7.
+https://www.geeksforgeeks.org/design-a-stack-with-find-middle-operation/
+8.
+https://practice.geeksforgeeks.org/problems/parenthesis-checker/0
+9.
+https://practice.geeksforgeeks.org/problems/reverse-a-string-using-stack/1
+10.
+https://practice.geeksforgeeks.org/problems/special-stack/1
+11.
+https://practice.geeksforgeeks.org/problems/the-celebrity-problem/1

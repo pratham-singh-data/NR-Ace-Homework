@@ -1,0 +1,35 @@
+Subarrays refer to a contiguous subset of an array. Note they are not the same as subset as subsets can both be non-contiguous that is taken ranomly and do not have repaeated elements. (Subarrays may have repeated elements). Example:
+    For the array: 1 3 2 5 4 4
+
+    1 2 5 is an subset but not a subarray.
+
+    1 4 4 is a subset but not a subarray (Subset here has a repeated element due to a repeat being thee in the original, the repeat here are in reality diffeent elements).
+
+    1 4 4 4 is neither a subset or subarray as the last 4 has to be a repeat, neither is it a subarray.
+
+    132 is  botha subset and a subarray.
+
+A subset of an array is a structure that has one-to-one mapping with elemnets of the array.
+
+Total subsets of an array: 
+    Either an element is mapped into subset or not. Every value is either mapped or not so each of the N elemnets have 2 choices hence total subsets are:
+        2 * 2 * 2 * 2 * ... * 2 (N Multiplications)
+        = pow(2, N)
+    
+    To visualise:
+        Consider any array: {1, 2}
+        The subsets are: {}, {1}, {2}, {1, 2}
+
+        When we add a third element: {1, 2, 3}
+        The subsets are just the same but with 3 added to them all:
+            {}, {1}, {2}, {1, 2},
+            {3}, {1, 3}, {2, 3}, {1, 2, 3}
+        
+Total subarrays of an array: 
+    Subarrays of size 1: N
+    Subarrays of size 2: N - 1
+    Subarrays of size 3: N - 2
+    ...
+    Subarrays of size N: 1
+    so total subarrays are: N + (N - 1) + (N - 2) + ... + 1
+                           = (N - 1) * N/2

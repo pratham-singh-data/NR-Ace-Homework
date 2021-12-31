@@ -1,0 +1,48 @@
+Data Types: They are needed to store different types of data. They tell a computer how it should 
+handle a value.
+
+An int for example is of 4 bytes so there are 4 * 8 = 32 bits, so range is 2^32 and first bit is reserved
+for sign, the rnge becomes -2^31 to 2^31.
+
+But if we need larger numbers we use long int which store in 64 bits that is double of that, so -2^63 to
+2^63 - 1.
+
+To store fractional data we use float (4 bytes) and double (8 bytes).
+
+To store text we use char that store data within single quotes. It stores any single entity. It takes 1
+byte (as C++ uses ASCII to store data). When we try to store a charchter in memory, the block is assigned 
+the corressponding ASCII value of that charachter.
+
+>> : Insertion Operator
+<< : Extraction Operator
+
+Say we enter higher values than the range of int, this causes integer overflow, we use higher range 
+dataypes like long for this, We may use long ong if long is exceeded. Vectors can be used for still higher
+numbers, no inbuild datatype can hold such big values.
+
+Note: Not all of our memeory is free to use, we reserve some part of memeory for use in computer's processing
+
+Preprocessing does 2 things:
+1) File Inclusions using #include directive
+2) Macro Expansion using #define.
+Note that they are both basically the same thing.
+
+String is a collection of charachters, it is writte in double quotation marks. Single Quote and one letter is a 
+charachter.
+ 
+"abcd" is a String.
+'abcd' is invalid. (Neither charachter or string)
+'#' is a charachter.
+"a" is a charachter.
+
+So, a single letter can be both a charachter and a string depending on the number of quotes.
+
+** Anything between single quotes is a chrachter iff there is only one letter.
+
+You may use #define with datatypes too eg:
+#define int long long int
+
+Everywhere there is int convert it to the datatype long long int
+Note that here while long long int takes more space that is neglected in asymtotic notation as int is 4 byte
+and long long int is 8 Byte as the factor is 2 due to it being a constant that is just eliminated due to it 
+being a constant.

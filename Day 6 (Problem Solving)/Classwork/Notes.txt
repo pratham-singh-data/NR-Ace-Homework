@@ -1,0 +1,4 @@
+Break: This keywork ends a loop.
+Continue: This keywork skips the current iteration.
+
+When solving problems start with making a genral case, this is called a generic (a case for n input(s)).

@@ -1,0 +1,23 @@
+Here store first unsorted part's array and compare in sorted part if that value is greater than current fill 
+that in one above currnent.
+
+Eg:
+Iteration x:
+    1 3 5 8 4 9 7 
+    1 - 8 is sorted rest s unsorted.
+
+    store 4 in temp
+    compare in sorted part:
+        arr[3] > temp:
+            1 3 5 8 8 9 7
+        arr[2] > temp:
+            1 3 5 5 8 9 7
+        arr[3] < temp (insert here)
+            1 3 4 5 8 9 7
+
+Analysis:
+    Best Case: One Operation per element to check correct position O(1).
+    Worst Case: Every element is swapped till start so O(pow(n, 2))
+                n * (n + 1) / 2
+Of all O(pow(n, 2)) algorithms this is the best as it has lowest best case. The other need to be modified 
+to get to the same complexity wheras insertion is already there.

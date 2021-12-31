@@ -1,0 +1,71 @@
+Data types tell:
+1) What type of data is bveing stored?
+2) How much data is to be alloted for thye given data.
+
+An operator is used to perform operatons/tasks. They are of different types and tell what operation is to 
+be done on operands.e.g: 2 + 3 * 5 has 2 operators and 3 operands.
+
+Division of operators based on number of operands:
+1) Unary: Only one operand e.g. Not operator (!), Post-increment(++) etc.
+2) Binary: Two operands is required. e.g. Addition (+), subtraction(-) etc.
+3) Ternary: Three operands are required. e.g if-else operator ((condition)?(if clause):(else clause)) 
+(This is the only ternary operator).
+
+Ternary Operator:
+(a > b) ? 3 : 5
+here:
+1) if a > b, if clause is run and 3 is returned.
+2) if b >= a; else clause is run and 5 is returned.
+
+Equal-to (=) operator: An assignment operator, if x = y is given, y ois computed and stored in x.
+Equality (==) operator: A logical operator when x == y is given checks if x and y are equal to each other.
+
+L-value error: Occurs when we can't assign the LHS a value using equal-to operator. e.g. 7 = 8 returns error
+while a = 8 does not as a is a memory location that can be overwritten while a literal cannot be overwritten
+as in the first example and thus causes and error.
+
+Note: C++ displays 1 for true and 0 for false.
+
+Division of operators based on type of operands:
+1) Binary Operators: These work on bits of operands. e.g. bitwise AND (&), bitwise OR (|), bitwise XOR (^),
+Not (!).
+    1) Bitwise And (&): You want to go to school and on the path there are two bridges, one is broken and the
+        other is fine, to reach school we need both bridges to be fully operational. Same here AND returns
+        true when both conditions are true.
+            Similiary 6 is written in binary as 110 and 5 as 101. AND of these gives 100 i.e 4. This is obtained 
+            by calculationg on each bit at same position as in the other.
+    ** Alternate way to calculte binary. substract bit position value with value to convert then assign 1
+    at each value smaller than curr. e.g. 53 is given; 64 is higher so set to 0. 32 is lower so set to 1.
+    update value 53 - 32 = 21, now 16 is lower so set o 1 and update 21 - 16 = 5, 8 is higher so 0, 4 is lower
+    so set to 1 and update 5 - 4 = 1, 2 is hogher so 0, 1 is equal so set to 1 and update 1 - 1 = 0. Once we
+    have 0 we terminate.
+
+    2) Bitwise OR (|): You want to go to school and there are two paths on each there is a bridge, to reach school 
+        we need only on of the two to be fully operational. Same here OR returns false when both conditions are false.
+            Similiary 6 is written in binary as 110 and 5 as 101. AND of these gives 111 i.e 7. This is obtained 
+            by calculationg on each bit at same position as in the other.
+        
+    3) Bitwise NOT (!): Inverts each bit e.g. if input is 5 i.e 101 result is 010 which is 2.
+
+    4) Bitwise XOR (^): Returns 1 when only one of the two operands at a bit position is 1 else it returns 0.
+        e.g. operands are 9 (1001) and 3 (0011) is 1010 i.e 10.
+    
+2) Arithmatic Operators: These perform arithmatic operations. e.g. Addition (+), Subtraction (-), Multiplication (*),
+DIvision (/), Modulo (%).
+
+3) Boolean Operators: These operate on two boolean operands and return true or false. e.g boolean AND (&&), boolean
+OR (||), boolean NOT (!).
+
+4) Relational Operators: These operators check relations between operands, these include greater than(>),
+lesser than(<), greater than or equal  to(>=), lesser than or equal to(<=), equality(==), not equal to(!=).
+
+Conditional Statements: Say we are given the question, "WAP to subtract wto niumbers and print the result
+such taht if result is positive then print 100 else print 0." These are how most real world problems appear.
+
+Here we apply if-else clauses. If checks for a condition and applies statements if true and else is an operational
+statement that executes only once if clause returns false. It cannot be used as a standalone but may be used
+with while and do-while loops where it specifies what to run at end of loop (thoiugh it is almost always
+unnecessary). They are of two types:
+1) if Statement: A standalone if statement.
+2) if-else Statement: One if and one else block.
+3) if else if statement: Sequence of if else blocks nested within each other.

@@ -1,0 +1,42 @@
+Array is a really importatnt topic with a wide range of applications in CP.
+
+Say we need to make a program to calculate the average marks of 5 students. Noramally we will need to 
+input ech students marks then divide it by 5. Now that is an acceptable solution, but in real life we 
+encounter say 10^9 students, it is unreasonable to create so many distinct variables. We need a more 
+realistic way to avoid:
+1) Making a large number of variables.
+2) To allow easy access, as normally (like here) datat would be arranged randomly and say we meed marks
+of student 5, dynamically we don't know which variable has that, so need a way to do this.
+
+Now if we notice all these values, they are all of the same properties, i.e. They all store integers that 
+represent marks of the ith student. Hence we may use arrays where data is allocated continuously in the 
+memory such that they all are homogenous. Here the variable of array name holds only the address of the 
+first element in the array.
+
+Now say array student has 5 elements, each hold int so it has 5*4 bytes which is 20 and the total bits are
+20*8 which is 160. All are stored continuously, so if first bit is 2000 then next is 2001 and so on... after
+every 4 bits a new int will start.Asterisk operator can get value from inside it too.
+
+Pointer Arithmatics:
+    if we consider two integers:
+    a = 3 + 7
+    where both 3 and 7 are integers, value is 10
+
+    but addresses don't work like this, here if we do X + Y where X is an address and Y is an integer.
+    here the final value will be:
+        X + Y * sizeof(dtype);
+        here if x is int then
+        X + Y * 4;
+
+The * operator may also be used to change value in a location. Same may be dome by arr[x] i.e
+*(arr + x) and arr[x] are both valid ways to access element in an array. Due to this we use zero based
+indexing in arrays.
+
+If we were to calculate sum of i students the value will be sum of i - 1 students added with the marks of
+the ith student. 
+
+To get float result you can make denominator either float (eg: 6.0) or add to it a float(like 0.0), same 
+with numinator
+
+In Series with factorial fact() is not preferred as it requires n runs for each number which is not 
+acceptable.

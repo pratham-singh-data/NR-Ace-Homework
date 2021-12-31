@@ -1,0 +1,8 @@
+Given an array holding the heights of blocks in a city flooded with wate, each index in the array tells the height of a block of with 1m, compute amount of water trapped in this area.
+
+eg:
+    n = 6
+    arr[] = {3, 0, 0, 2, 0, 4}
+    output: 10
+
+At any given position the amount of water on a block depends on the minimum of the the right and left greatest heights.

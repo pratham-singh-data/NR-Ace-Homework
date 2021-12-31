@@ -1,0 +1,74 @@
+Say we are given 2 sorted arrays of:
+    1 5 6 8
+    2 3 4 7 100
+
+If we are to make  alarger array that combines both of them while retaining the sorted array.
+
+Size of this array will be m + n where m is size of first array and n is the size of the second array. 
+Here it cones to be:
+    m = 4
+    n = 5
+    m + n = 9
+
+Merge Function:
+1)  To do so we use two pointer algorithm which gives one pointer to the first array and the second pointer to
+    the second array both at the first element. 
+2)  As both are already sorted, we need only compare the elements currently pointed to by the pointers then 
+    increment that pointer.
+3)  That element is input into the output array.
+4)  This is repeated till at one of the pointers reach the end of their array.
+5)  Then iterate the other pointer througth its array till all of its elements are in the output array.
+
+This has O(n) complexity as at each iteration one elements is input at most.
+
+Now onto Merge Sort. Here we break the array into smaller parts,  sort them then merge the smaller parts
+until the full array is sorted. 
+
+int mergeSort(arr, l, h){
+    if(l >= h) return;
+
+    int mid = (l + h) / 2
+    mergeSort(arr, l, mid);
+    mergeSort(arr, mid + 1, h);
+    merge(arr, l, mid, h);
+
+    // You may also not pass mid here as it can be calculated at the receiving side, but here we pass 
+    // it as it saves time in recalculation
+}
+
+Calling a vector by pass by reference makes complexity O(1) as only refernce (base address) is to be passed.
+Calling a vector by pass by value makes complexity O(n) as entire vector is to be copied.
+
+This is not the case in arrays as there address is passed no matter what we do.
+
+Time complexity of Merge Sort:
+    let the elements between low and high initially be n so algorithm takes total T(n) time
+    mid divides array into two parts so each recursive call to mergeSort() take T(n/2) time
+    merge() operates on all elements so T(n);
+    mid's calculation takes constant time, assume C
+    final complexity: (I am ignpring C in this calculation)
+        T(n) = 2 * T(n/2) + n + C
+        considering next call to mergerSort()
+        T(n) = 2 * (2 * T(n/pow(2, 2)) + n/2 + C) + n + C
+            = pow(2, 2) * T(n/pow(2, 2)) + 2n + C
+        Next iteration
+        T(n) = pow(2, 2) * T(n/pow(2, 2)) + 2n + C
+            = pow(2, 2) * (2 * T(n/pow(2, 3)) + n/pow(2, 2) + C) + 2n + C
+            = pow(2, 3) * T(n/pow(2, 3)) + 3n + C
+        After h iterations
+        T(n) = pow(2, h) * T(n/pow(2, h)) + hn + C
+        We can assume T(n/pow(2, h)) is almost equal to 1 so;
+        T(n) = pow(2, h) + hn + C
+        Putting h = log(n, 2)
+        T(n) = pow(2, log(n, 2)) + log(n, 2) * n + C
+        Largest step is:
+            O(n * log(n, 2))
+
+Q: How we put h = log(n, 2)
+=> we assumed n/pow(2, h) = 1
+    So; n = pow(2, h)
+        log(n, 2) = h
+        h = log(n, 2)
+
+Simpler method: Arrange calls in a tree:
+Adjoining image

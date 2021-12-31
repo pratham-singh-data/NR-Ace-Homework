@@ -1,0 +1,31 @@
+Types of function calls:
+1) Pass by value
+2) Passs by Reference
+3) Pass by Pointer
+
+If we pay attention to swapping of two numbers, the following are the ways to do it:
+1) We assign the value to a temporary variable and overwrite that value, a with the second and assign the 
+temporary variable's value to the other variable, b.
+
+2) a = a+b;
+    b = a - b; here b = (a + b) - b
+    a = a - b; here a = (a + b) - (a)
+
+3) a = a * b;
+    b = a / b; here b = ((ab)/b)
+    a = a / b; here a = ((ab)/(a))
+    Truncatng will mnever occur as both numbers will always be divisible with each other. So can be done 
+    with int itself.
+
+4) a = a ^ b;
+    b = a ^ b; here a = (a ^ b) ^ b;
+    a = a ^ b; here a = (a ^ b) ^ ((a ^ b) ^ b);
+
+Function calls:
+1) Call by value: A copy of the values is made in the function and used. Changes made within the function
+                do not pass over to the calling function.
+2) Call by Refernce: Same values as in the calling function are used. Changes made within the function
+                pass over to the calling function. New alias may be provided if necessary. Both functions'
+                parameters point to the same memory location.
+3) Call by pointer: We use pointers in the called function and calling function sends address to called 
+                function as parameters. 

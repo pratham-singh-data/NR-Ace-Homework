@@ -1,0 +1,91 @@
+A static instance keeps its alterations and value throughout instances of its call even if destructor
+was supposed to have been run. The first instance of its call is its initialisation and if it is assigned 
+a value then, that value does not override it in next instances of its call.
+
+Properties:
+1) Multiple declaration of same variable in same instance of function call is not allowed.
+2) These variables may be called multiple times but are only initiated once, in the initial call. (or as 
+per code)
+
+Once a static is called it remains in program till the program terminates, like global but it is 
+accessible only in a certain part of the code.
+
+Global variables may cause conflict in files where they are imported wheras static is private to the 
+source file.
+
+Multiple static variables of the same name may exist in multiple functions, this is not possiblle in 
+global variables, hence how they are different.
+
+In classes they may be used to store common variables such as number of eyes and hands in humans so that
+memory need not be wasted in creating multiple instances of these variables in multple objects. All objects
+share the static members.
+
+sizeof() only calculates size of cummulative instances of non staic data members. Static members are 
+assigned memory before object creation as they belong to the class and not the objects hence sizeof does 
+not count them as they are not part of the object rather are of the class.
+
+Note: 
+1) sizeof() is a depricated function from C, avoid using it.
+2) Static is only a method to save space and are not a requirement in most code.
+
+    #include<iostream>
+    using namespace std;
+
+    class GFG{
+        public:
+            static int a;
+
+            GFG(){
+                //nothing
+            }
+    };
+
+    int main(){
+        GFG obj1;
+        GFG obj2;
+        obj1.a = 2;
+        obj2.a = 3;
+
+        cout << obj1.a << ' ' << obj2.a << '\n';
+
+        return 0;
+    }
+
+Declaring like this reurns an error, you should initialise a static variable explicitly by using the scope 
+resolution operator as such:
+    #include<iostream>
+    using namespace std;
+
+    class GFG{
+        public:
+            static int a;
+
+            GFG(){
+                //nothing
+            }
+    };
+
+    int GFG :: a = 23;
+
+    int main(){
+        GFG obj1;
+        GFG obj2;
+        obj1.a = 2;
+        obj2.a = 3;
+
+        cout << obj1.a << ' ' << obj2.a << '\n';
+
+        return 0;
+    }
+
+Static declaration is ignored in all subsequent calls.
+
+for difining:
+1) If defining inside; it must be constant.
+2) If outside, only deine once (May be changed later)
+
+Static functions may be called both by the objects and the class (by scope resolution).
+
+A static function can only call static variables and data memebers as everything else belongs to the 
+object and not the class so static members do not have them in their scope. But non static can use static
+as objects have access to everything belonging to a class.

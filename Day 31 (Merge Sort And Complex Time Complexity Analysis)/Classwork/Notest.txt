@@ -1,0 +1,2 @@
+Bubble, Insertion and Selection Sort are all pow(n, 2) algorithms but we also have log(n, 2) algorithms 
+for this these include Merge, Quick and Heap Sort.

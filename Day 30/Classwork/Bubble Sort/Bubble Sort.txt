@@ -1,0 +1,27 @@
+Take the same array again:
+    8 5 1 100 20 15 3
+
+we treat each value as a bubble and we can only swap with adjacent elements as such:
+    if(arr[i] > arr[i + 1])
+        swap(arr[i], arr[i + 1]);
+    
+Iteration 1:
+    8 5 1 100 20 15 3   8 > 5
+    5 8 1 100 20 15 3   8 > 1
+    5 1 8 100 20 15 3   8 !> 100
+    5 1 8 100 20 15 3   100 > 20
+    5 1 8 20 100 15 3   100 > 15
+    5 1 8 20 15 100 3   100 > 3
+    5 1 8 20 15 3 100
+
+Continue till sorted array
+
+Here our intention is to swap element such that at each iteration we bring the largest element to the end 
+(we may change such that we smallest is brought to the start instead).
+
+Iteration 1: largest to n - 1
+Iteration 2: second largest to n - 2
+Iteration 3: third largest to n - 3 and so on...
+
+Mneumonic:
+    for, for, check j, swap

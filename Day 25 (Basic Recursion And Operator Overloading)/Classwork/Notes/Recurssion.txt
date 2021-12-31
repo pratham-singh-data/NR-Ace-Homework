@@ -1,0 +1,25 @@
+Say we have to print numbers until n; we can either use a loop:
+    for(int i = 0; i < n; i++){
+        cout << i << '\n';
+    }
+
+There is another way to think, all we need to do is call a function to print i then call that function 
+again to print(i - 1), this continues till n is reached and all numbers i - 1 and back either are not 
+needed or already printed.
+
+Recursion:
+    1) Time complexity is harder to find as we need to find the instance of last call for a given input.
+    2) Gives shorter code but higher time complexity.
+    3) Large overhead caused by large number of recursive calls causes increase in time complexity.
+    4) May cause CPU crash or stack overflow in case of unhandled end of recursive calls.
+
+Iteration:
+    1) Time complexity is comparitively easier to find.
+    2) Gives longer code but lower time complexity.
+    3) No such overhead is involved.
+    4) Infinite loops can happens but they do not cause system crash. Program though will not be able to 
+    execute further.
+
+All execution calls are put in a stack with main at the bottom and each instance of recurrsion calls on 
+top of it. After termination execution, all functions get popped and rogram ends once main() is popped.
+

@@ -1,0 +1,68 @@
+DSA is used for problem solving and solves a lot of things in the industry but in order to use it 
+we will need languages like C++ (learnt here) to implement it.
+
+c++ is a high level language, it is object oriented and procedural oriented also i.e. partially 
+object oriented.
+
+Q:- Why C++?
+A:- It comes with the inbuilt library stl that comes with a lot of inbuilt libraries for competitve 
+coding, hence it is better for starters. Also, java and python are comparitively slower.
+
+In java, c++'s stl is rplaced witrh collections. c++ is 4* faster than java and 10* faster than python.
+
+Famous Softwares in c++:
+1) Windows OS.
+2) System level softwares 
+3) Drivers
+4) High Res games
+This is because all of these need high speed which is desired here.
+
+Q:- What is a High Level language?
+A:- A language is a mode of communication (in the general sense). E.g. person A can write or talk to a 
+person B to communicate information, this is only effective if both know that language. But now say they
+don't know a common language and are incapable of learning a common language, in this case a translator 
+who acts as a middle man is needed.
+    This is what we encounter when talking to a computer which can only understand binary or machine 
+language, so here we employ the compiler as a translator. In this context, languages understood by humans
+are called high level languages, generally these are english like languages (because none have been made for 
+other real world languages).
+    Code Editors are merely for writing the code, the actual work is done by the compiler. Compiler reads 
+the code and converts it to binary.
+
+When writing a code even if it is 5 lines long we add to it header files, these are put into our file in 
+the preprocessing stage.
+
+The compiler does many things including the lexical analysis, which does spelling checks like throw an error 
+if we write mian() instead of main() (and main was intended). 
+
+Another step is syntax analysis like writing a * instead of a * b. That is errors due to incorrect logic.
+
+Another step is semantic analysis. E.g. When we write int a, 4 blocks of memory is reserved for a and no
+other variables can access it.Now say we do 2 + 2 + 2.34, the result is of float type, this type is 
+chosen through semantic analysis. This is because compiler tries to minimise data loss so float being the
+largest datatype is chosen as type of result.
+
+Now compiler has done all checks, we now move on to intermediate code generation, this is not machine code.
+This is a code that is comparitively easier to understand than high level code and can ce passes to 
+assember which actually creates the machine code. Now note that if we are to write the same High Level Code 
+in two machines, as ompiler is the same, same checks and intermediate code is generated in both machines but
+the machine code is supposed to be the code that is best understood by the machine and is machine dependent so 
+different machines need not have the same machine level code.
+
+Linker and Loader is responsible for making object code from high level code. The object code is the .exe 
+file. It is found in the compiler. The exe file is run by the assember which is hard coded as firmware in the 
+computer. The object file (exe) is comparitiveluy more standard as compared to the machine code file. 
+
+Note that the exe file is for windows, mac and linux have different internal systems. Everthing upto 
+Linking and loading is same, just exe is not produced. 
+
+High Level language is used as it is far easier to use it as compared to directly coding in binary.
+
+
+How To make a file:
+
+When making a file we need to tell the file extention which tells it what is needed to run a file e.g
+.doc    Microsoft Word or equivalent is needed.
+.java    JVM is needed,
+.cpp     mingw32 is needed.
+.html    web browser is needed.

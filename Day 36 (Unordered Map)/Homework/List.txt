@@ -1,0 +1,9 @@
+Implement unordered map
+specifications:
+    generic
+
+    insert(key, value)
+    delete(key)
+    isPresent(key) returns pair<k, v>
+    display() (optional)
+    search(key) (not from sir but since it's obvious)

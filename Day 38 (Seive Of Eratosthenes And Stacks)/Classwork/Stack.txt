@@ -1,0 +1,20 @@
+Stacks are used for ordered linear storage, here items are stored in FIFO order (only top element (last added) is accessible)
+
+    push(int element){
+        top++;
+        arr[top] = element
+    }
+
+This is used to add element to stack.
+
+To get top value:
+    topmost(){
+        return arr[top]
+    }
+
+    handle cases such as empty stack(top == -1)
+
+to remove an element:
+    pop(){
+        return arr[top--];
+    }

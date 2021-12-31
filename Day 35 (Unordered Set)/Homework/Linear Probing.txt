@@ -1,0 +1,21 @@
+Say we take a hash function(normal):
+    hash(k) = k mod 10
+hash function after probing:
+    this one applies after a collision occurs to find the new location of insertion
+    hash(k, i) = (hash(k) + i) mod 10
+    here i is the number of times we have serached (initially 0)
+
+    Note: that it in effect only return the next value to the current value i,e. say we tried to insert at n and and if n is filled insert at n + 1.
+
+Advantage:
+    No extra space is used. (Unlike in chaining where remaining space is left empy and linked list's extra space is consumed)
+
+Diadvantage:
+    branch time is O(n) as we may need to traverse the enture space to one before the first index i.e traverse the full array.
+
+    deletion is difficul as value could be anywhere in the full array.
+
+    primary clustering: elements get clustered causing more collisions to occur:
+        a, space, space, b, c, d, e, f, g, h, space, space, i
+
+    secondary clustering: when two ormore elements follow the same probe sequence: eg: a is assigned 1, 2, 3, 4, 5 and b also ges 1, 2, 3, 4, 5 and so on... 

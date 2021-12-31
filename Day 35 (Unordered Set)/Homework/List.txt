@@ -1,0 +1,2 @@
+Learn linear probing, quadratic probing.
+Implement unordered_set by linked list.

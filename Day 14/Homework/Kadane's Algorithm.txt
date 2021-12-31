@@ -1,0 +1,44 @@
+Used to find the contiguous subarray of maximum sum;
+
+The brute force method is:
+    Say we are given:
+     -5 4 6 -3 4 -1
+
+We find each and every possible contiguous subarray:
+-5 4 6 -3 4 -1
+-5 4 6 -3 4
+-5 4 6 -3
+-5 4 6
+-5 4
+-5
+
+4 6 -3 4 -1
+4 6 -3 4
+4 6 -3
+4 6
+4
+
+6 -3 4 -1
+6 -3 4
+6 -3 4
+6 -3
+6
+
+-3 4 -1
+-3 4
+-3
+
+4 -1
+4
+
+-1
+
+Calculate sum and complexity; here comlexity is O(n*n)
+
+To optimise:
+1) We cannot sort as order is important.
+2) Now consider:
+    a. If all numbers are positive we can add them all together and get that as result
+    b. If a negative is involved, only add into subarray if value after addition is +ve. else drop 
+    current subarray.
+    This is O(n) solution.

@@ -1,0 +1,5 @@
+Implement Quick Sort Yourself
+Tim Sort
+Double Pivoted Quick Sort
+Read Quick Sort Article on GeeksForGeeks
+In Place Merge Sort

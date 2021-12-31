@@ -1,0 +1,8 @@
+iostream
+C:\TDM-GCC-64\lib\gcc\x86_64-w64-mingw32\5.1.0\include\c++\iostream
+
+ostream
+C:\TDM-GCC-64\lib\gcc\x86_64-w64-mingw32\5.1.0\include\c++\ostream
+
+istream
+C:\TDM-GCC-64\lib\gcc\x86_64-w64-mingw32\5.1.0\include\c++\istream

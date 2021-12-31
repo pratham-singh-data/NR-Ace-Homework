@@ -1,0 +1,172 @@
+We have a lot of algorithms so we need a way to test which is beeter.
+
+Now to check an algorihm, we can test by running each algorithm in our computer on the same software, but
+this could result in different systems based on which system has better (or newer) hardware, so time of
+execution is not always the best criterion.
+
+So in order to test we need a new methos, that's where asymptotic analysis comes in, it tells that based
+on change in input size at what rate does time taken by algorithm increase. (Hence we do not test whether)
+algorithm is fast we test how fast algorithm's execution time increases (rate of increase in speed instead
+of speed).
+
+We can check differnce based on graph of input size vs execution time;
+    linear search follow y = x line and binary seach follow y = log(x) curve.
+
+Exercise:
+1) Calculate complexity of:
+    for(int i = 1; i <= n; i += 5){
+        cout << "Hello";
+    }
+
+    Answer: n/5 => O(n)
+
+Steps to get O value:
+1) Eliminate Constants.
+2) Eliminate Coefficients.
+3) Eliminate all values except highest degree term.
+4) This is the big oh value.
+
+Execise:
+2)
+    for(int i = 1; i <= n; i+= 3){
+        for(int j = 1; j <= 3*n; i *= 3){
+            cout << "Hello";
+        }
+    }
+
+    Answer: Infinite loop; inner loop never terminates
+
+3)
+    for(int i = 1; i <= n; i+= 3){
+        for(int j = 1; j <= 3*n; j *= 2){
+            cout << "Hello";
+        }
+    }
+
+    Answer:
+        outer loop = x
+        inner loop = y
+
+        x runs n/3 times.
+        y runs:
+            At each run y gets closer to 3n by a factor of 2 so;
+            till pow(2, z) > 3*n
+            z = log(3*n, 2)
+        
+        So total complexity is O(n log(n))
+    
+4)
+    int n;
+    cin >> n;
+
+    while(n > 0){
+        n = n/10;
+    }
+
+    Answer: log(n, 10)
+            Decrease by a factor of 10 upto 0
+
+5) Tell approxiamte output  and number of runs in:
+    for(int i = 0; i < n; i+= 2){
+        for(int j = 0; j > 0; j += 3){
+            int k = 1;
+
+            while(k < n){
+                k *= 3;
+            }
+        }
+    }
+
+    Answer: no output; No code to execute;
+            outer loop => n iterations
+            inner loop => 0 iterations
+            inner loop 2 => code unreachable
+
+6) Tell approxiamte output  and number of runs in:
+    for(int i = 0; i < n; i+= 2){
+        for(int j = 0; j >= 0; j += 3){
+            int k = 1;
+
+            while(k < n){
+                k *= 3;
+            }
+        }
+    }
+
+    Answer: no output; infinite loop;
+            outer loop => n iterations
+            inner loop => infinite iterations
+            inner loop 2 => log(n, 3) runs
+
+7) Write complexity of:
+    for(int i = 1; i < n; i+= 2){
+        for(int j = 1; j < log(n); j *= 5){
+            int k = 1;
+
+            while(k < n){
+                k *= 3;
+            }
+        }
+    }
+
+    inner while loop => log(n, 3) runs
+    outer loop => n runs
+    inner for loop => 
+        ends at pow(5, z) > log(n)
+        z = log(log(n), 5)
+
+    Answer = n * log(log(n), 5) * log(n, 3)
+
+8) 
+    int n;
+    cin >> n;
+    while(n > 0){
+        n = n/10;
+    }
+
+    Answer: log(n, 10)
+
+9) WAP to imput a number and print the reverse of that number without use of strings.
+
+10)
+    int arr[n];
+    
+    for(int i = 0; i < n; i++){
+        cout << arr[i];
+    }
+
+    Answer: O(n)
+    As direct access if O(1) and arrays use direct access
+
+11) 
+    for(int i = 0; i < n; i++){
+        cout << i;
+    }
+
+    for(int i = 0; i < n; i++){
+        cout << i;
+    }
+
+    Answer: O(n)
+
+12) 
+    for(int i = 0; i < n; i++){
+        cout << i;
+    }
+
+    for(int i = 0; i < n; i++){
+        for(int j = 1; j < n; j *= 2){
+            cout << i * j;
+        }
+    }
+
+    first loop => n
+    second loop =>
+        outer loop => n
+        inner loop => log(n, 2)
+
+        n * log(n, 2)
+    
+    n + (n * log(n, 2))
+
+    Answer: O(n log(n, 2))

@@ -1,0 +1,5 @@
+Same as in previous question
+
+eg: 
+    input: 5 3 8 1 6 4 2
+    output: -1 0 -1 2 2 4 5

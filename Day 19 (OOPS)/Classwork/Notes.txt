@@ -1,0 +1,75 @@
+OOPS: Object Oriented Programming System.
+
+In normal programming (functional programming), full logic was distributed into multiple functions.
+In procedural programming, we do the same but call functions procedures.
+
+Object Oriented Programming is a methodology where we call each object in a problem an entity and each
+have their own poperty and behaviour. Eg. A rectangle has length and breadth as its property, a circle 
+has radius, they also have parameters area and perimeter that can be calculated from its properties. 
+
+Take another example, a boy has no real world existance but objects A, B and C who are boys have 
+existance, here boy is a class while A, B and C are its object.
+
+Object are real world entities while classes are entities with no real world existence that define the 
+working of that class. No space is allocated in memory for a class until its object is created.
+
+Size allocated to an object is the size of all of its properties combines eg. if it has 3 integers and 
+4 functionsl size is of 12 (3 * 4 (size of int)), size of functions is not considered.
+
+class.method or class.parameter is used to access theeach member of the class. Here dot (.) is the 
+memebership operator.
+
+Classes are used to combine property and behaviour such as to make a problem resemble a real world object
+and this is thus used in OOPS to solve complex problems. This makes it easier to store data such as details
+of 1000 people, normally we would need to store each individual's data as seperate arrays and thus in order
+to access we would need to access same index in multiple arrays, this makes access a bit complicatd, 
+alternatively we can make a single person array and store data as such.
+
+Class names are allways written with first name in uppercase and when making functions (or methods) use 
+camel case (first letter is lowercase and first letter of each new word is uppercase).
+
+4 pillars of OOPS:
+1) Abstraction
+2) Encaptulation
+3) Inheritence
+4) Polymorphism
+
+Abstraction: 
+    Say we have a remote; it has number of buttons, brand etc as its properties and changeChannel(), 
+    giveError() as its functions; if you notice, all of these are complex processes but the user need 
+    not know of these, all the user needs toknow is he is to click a button.
+    This is abstraction, we only need to know what a class does but we need not know how it works.
+
+Encaptulation:
+    Wrapping up of data members (properties) and methods under a single enetity (class) is called 
+    encaptulation. 
+
+Polymorphism:
+    If we think about the + operator, when used with strings , it works as a concatenation operator while
+    with integers, it works as an addition operator.
+    Polymorphism means that an entity may behave in more than one way.
+    eg:
+        sum(int, int), sum(int, int, int), sum(float, float) are all different function.
+    Signature must be different for this to work. (name(parameter) is the signature of a function)
+
+    System looks for a suitable function and will pass float as ing (by typecast) if one is present instead
+    of throwing an error.
+
+    Ways to get difference for function overloading:
+    1) Change number of parameters 
+    2) Change type(s) of parameters 
+    3) Change order of parameters 
+
+    Note as compilers handle overloading differently, it could lead to random calls if multiple possible 
+    functions are present.
+
+Inheritence:
+    Class inherits properties from other predefined class.
+
+Access Specifiers: Used to specify what part of program can access a data item.
+1) Public: Can be accessed anywhere in the program.
+2) Private: Can be accessed only withing the class.
+
+Say we specify some data members as private to set them we use setter methods and in order to get them we
+use getter function. Here we can apply security measures such as to make sure no unauhorised person is 
+accessing our data.

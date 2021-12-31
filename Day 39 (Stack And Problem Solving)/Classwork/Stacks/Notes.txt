@@ -1,0 +1,13 @@
+Stacks when implements by arrays cause wastage of space as say we allocate 10 bytes of space but fill only 3 bytes worth of elements, he remaining space will remain unused. To solve this we use the linked list stack.
+
+Note: Vectors still temporarily runs into this problem so we will use linked list here.
+
+Also we know that
+    push() => O(1)
+    pop() => O(1)
+    top() => O(1) 
+
+To do this we will do:
+    push(): insertAtHead()
+    pop(): deleteFromHead()
+    top(): displayHead()

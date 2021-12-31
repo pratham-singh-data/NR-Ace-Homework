@@ -1,0 +1,32 @@
+Unordered Set due to use of hashing can also be called hash sets.
+
+Now say we are given 100000 queries, we are given queries as such: 
+1 x: insert x in structure.
+2 y: check if y is in structure.
+
+eg:
+1 2: add 2 in your DS
+1 3: add 3 to DS
+2 6: check if 6 is present: returns false
+2 2: check if 2 is present: returns true
+
+Now say for this we use vectors, we will need O(n) for searching or O(n long n) for insertions (for binary search), this would equate to an unacceptable complexity. We want a DS where both searching and sorting is done in O(1) time.
+
+Now let's try with an unordered set. (see code file)
+Here searching is indeed in O(1) but insertion is not due to redistribution.
+
+Note that data is stred in an uordered manner so we have to use find() for each element and iteration is not possible for even subsequent elements. find() returns unordered_set.end() when element is not present i.e one address after the end of the space allocated for the unordered_set.
+
+erase() is used to delete element in an unordered_set. It erases either a single elemnet or a group of element with start inclusive and end exclusive. so if
+    us.erase(us.end())
+    is passed full set is erased.
+
+To decrease time cmplexiy we use unordered map, here hashing is based on key, we create key value pairs (think: python dictionaries).
+    unordered_map<key, value> um;
+
+In unordered_set we used to find the hash for each value itself, here we fnd hash for key and assign that key a value.
+    mp["Raveet"] = 21; map gets a new key "Raveet" whose value is 21
+    mp["Aditya"] = 31; map gets a new key "Aditya" whose value is 31
+    mp["Jeenesh"] = 23; map gets a new key "Jeenesh" whose value is 23
+    mp["Raveet"] = 22; Key "Raveet" has value updated to 22
+    cout << mp["Non Exisent"] => 0; default value is 0

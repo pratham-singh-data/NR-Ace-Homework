@@ -1,0 +1,65 @@
+Consider the array:
+    1 5 3 8 2 4
+
+Here we aattempt to bring one element to its correct position at a time and use divide and conquer.
+It puts each element such that after placement all elements to the left are lower that that element and all
+to right are greater.
+
+We use two pointer method here;
+1)  Select target
+2)  Run low; this stops iterating once it encounters a value greater than target
+3)  Run high; this stops iterating once it encounters a value lower than target
+4)  if both low and high are stopped and they are at different positions swap the values they are pointing 
+    to.
+5)  If both are stopped and are at same position or high is behind low, swap high with target element.
+6)  Repeat process on each subsequence until a subsequence of length 1(already sorted, trivial) is obtained.
+
+Here the search space is not exactly halved and in some cases is not even always reduced.
+
+The target element is the pivot element with each iteration of quick sort, the pivot is placed in the correct
+position.
+
+Pivot could be any element but in our implementation the first will be chosen.
+
+Time Complexity Analysis:
+    In most cases it comes to be the same as merge sort i.e O(n log n) as elements get divided by pivot 
+    point.
+
+    But in case the elements are arranged such that at each point the elements are pivoted to one end 
+    point, thus we get a skewed search tree and thus we form  complexity of O(pow(n, 2)), here work is not
+    divided at all and all elements are operating on all remaining elements.
+
+    By equation this is given in the attached image.
+
+This is better than bubble, insertion and selection sort as it operates on n long n in best case but in 
+worst case it still behaves as a pow(n, 2) algorithm
+
+For average case, we consider in an armitizeed way;
+    If we randomize the array, then the array still returns O(pow(n, 2)) in case the array still remains 
+    sorted; the probability is 1/n! which is ignorably small; so we can say that in average case the 
+    complexity is on cases where pivot splits array into x and n - 1 - x so;
+        T(n) = T(x) + T(n - 1 - x) + n + C; this is almost same as and can be equated to the merge sort 
+                                            equation
+    If we consider a very bad partition i.e one where 90% of elements are on one side; the complexity still
+    n log(n)
+
+    So in all, if the elements are split into any fraction then the complexity comes to be O(n log(n)).
+
+    Also if we consider the space complexity; leaving the recursive stak space, there is no extra space.
+    Hence it is O(1) (Without consideration of the recursive stack space and the input array size) 
+
+The sort() is made using tim sort or double pivoted quick sort.
+
+This is considered better than merge sort as in real life situations the inner loop can be efficiently 
+implemented on most architectures and in most real life data.
+
+Stable Sorting Algorithm: Different iterations of the same number occur in same order as in original array.
+Unstable Sorting Algorithm: Different iterations of the same number need not occur in same order as in original 
+array.
+
+Inplace Algorithm: 
+    Operate on same array as input. Thiss occurs in algorithms like quick sort where entire 
+    array is needed at once to operate on.
+Out of Place Algorithm: 
+    Sorting occurs in different array than input. Merge Sort doesthis as in case 10GB is 
+    given it can pich 2GB at once and operate on it before combining results

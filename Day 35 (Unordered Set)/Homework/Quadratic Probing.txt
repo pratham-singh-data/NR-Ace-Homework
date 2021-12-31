@@ -1,0 +1,13 @@
+almost same as linear probing but here we use a quadratic value to get next search/insertion index.
+    hash(k, i) = (hash(key), pow(i, 2)) mod 10
+
+advantages:
+    no extra space
+    primary clustering resolved (as the next index is almost never returned after second collision).
+
+disadvantage:
+    branch tme is again O(n) as element could be in the full array.
+
+    No gaurantee of finding a slot (as it is possible we may iterate over the filled slots while empty slots are present preventing expansion; this occurs only after array is half filled)
+
+    secondary clustering still occurs.

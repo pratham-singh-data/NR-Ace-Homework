@@ -1,0 +1,16 @@
+sort(arr, arr + n)
+accepts arr + n as the last input as arr + n represents one more last address of the array while 
+arr + n - 1 represnts the starting address of the last element of the array hence these are the passed
+parameters.
+
+sort() is defined in <algorithms> library. 
+
+No comparision based sorting can be done in time less than O(n * log(n)).
+Counting and radix sort are O(n) but they are not preferred as they only work when daata is within a 
+given range and they cause a lot of space to be wasted by O(number of distict values in between).
+
+Sort everything but last element:
+    sort(v.begin(), v.end() - 1);
+
+Sort everything but first element:
+    sort(v.begin() + 1, v.end());

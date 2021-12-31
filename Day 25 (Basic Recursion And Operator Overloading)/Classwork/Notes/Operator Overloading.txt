@@ -1,0 +1,32 @@
+Say we have written:
+    int a = 10;
+    int b = 20;
+    cout << a + b << endl;
+
+Here computer knows that since both operators are int, it should add that, same haens if we have 
+long or float. But a difference occurs when we do:
+    string a = "Hello";
+    string b = "World";
+    cout << a + b << endl;
+
+Here since both operators are strings, this causes + to behave as a concatenation operator, this happens 
+because the + operator is overloaded to work as both the addition and concatenation operator.
+
+Now say weneed to make a class of complex numbers (a + ib), this is not preloaded in C++. Here addition 
+works by adding real and imaginary parts sperately but to do this we need to overload the addition 
+operator, such that:
+    Complex c1(4, 7);
+    Complex c2(3, 2);
+    cout << c1 + c2;
+    should give 7 + 9i
+
+This is acheived by:
+    Complex<T> operator + (Complex<T> a){
+        Complex <T> res(this -> real + a.real, this -> imaginary + a.imaginary);
+        return res; 
+    }
+
+    Here format is:
+        <left operator type> operator (<right operator type>)
+    
+Notte overloading + does not also overload += as they are sperate operators.
