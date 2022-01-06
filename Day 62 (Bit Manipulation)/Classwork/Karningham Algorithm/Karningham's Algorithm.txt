@@ -1,0 +1,30 @@
+Gets number of set bits in an optimised way.
+
+Naive approach:
+    Run a loop over32 positionsas we know that is amount of space int takes and count manually
+    This takes time O(sizeof(int))
+
+This algorithm takes: O(number of set bits), as remaining operations are useless. This uses two concepts:
+1) Unsetting bits
+2) Gettng mask in O(1) time, this is the major problem as we cannot iterate over the number
+
+If we are given a number x, the two's complement gives us the negative of ot i.e -x; (-x = ~x + 1)
+
+so to remove first non 0 bit do;
+    x & ~x
+
+    101101 original
+    
+    x = 101101
+    ~x = 010010
+    ~x + 1 = 010011
+    -x = 101100
+    x & -x =  101100
+
+    x = 101100
+    ~x = 010011
+    ~x + 1 = 010100
+    -x = 101011
+    x & -x =  101000
+
+    continue till we are get x == 0
