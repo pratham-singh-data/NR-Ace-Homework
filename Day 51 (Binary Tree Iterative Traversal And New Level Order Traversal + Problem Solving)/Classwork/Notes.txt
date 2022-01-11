@@ -1,0 +1,22 @@
+Iterative inorder:
+    Make a stack with each entry being a pair of state and node pointer; state:
+        0 => Traverse left
+        1 => print current
+        2 => Traverse right
+
+Iterative preorder:
+    Make a stack with each entry being a pair of state and node pointer; state:
+        0 => print current
+        1 => Traverse left
+        2 => Traverse right
+
+Iterative postorder:
+    Make a stack with each entry being a pair of state and node pointer; state:
+        0 => Traverse left
+        1 => Traverse right
+        2 => print current
+
+New Level Order Traversal: 
+    At any point n, we can say that the queue has n elements and we can operate on that and then proceed to the next level if they were to exist.
+
+    Here we have beter control  over levels.

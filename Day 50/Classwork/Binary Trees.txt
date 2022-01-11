@@ -1,0 +1,47 @@
+A tree is a hierachal data structure. eg:
+gf -> f -> you
+        -> brother
+    -> uncle 1
+    -> uncle 2
+
+Each cell is called a Node.
+Nodes with no children are called leaf nodes.
+Non-Leaf Nodes are also called Internal Nodes.
+
+A tree that has at most 2 children is called a binary tree. (The above example is a binary tree)
+
+1 -> 2 -> 3
+        -> 4 -> 6
+            -> 7
+
+is also a valid binary tree.
+
+1 -> 2 -> 3 -> 4
+is also a valid binary tree.
+
+1 -> 2
+    -> 3 -> 4
+        -> 5
+        -> 6
+is not a valid binary tree.
+
+To Implement:
+    Wee make a linked list with two pointers:
+        struct Node{
+            int data;
+            Node *left, *right;
+        };
+
+To view a tree we can use traversal techniques, these can be breadth first (We traverse the same level first and then move on to the next node) or depth first (We traverse all nodes of a single subtree first before moving onto the next one).
+
+a + b => inorder Expression
+a b + => postorder Expression
++ a b => preorder Expression
+
+Similarly in trees: 
+(Traverse left) (Print Current) (Traverse Right) => Inorder Traversal
+(Traverse left) (Traverse Right) (Print Current) => Postorder Traversal
+(Print Current) (Traverse left) (Traverse Right) => Preorder Traversal
+
+All these are Depth first approached but what if we need level order traversals (Breadth first techniques)
+To do so, we use queues.
