@@ -1,0 +1,10 @@
+Full Binary Tree: Each Node has either 0 or 2 children (Never 1).
+
+Complete Binary Tree: Each level is filled to the max i.e level l has pow(2, l) nodes.
+
+Perfect Binary Tree: Last level may be unfilled but unfilled are all to the right; filling is left to right
+    All complete are perfect but not vice versa.
+
+Skewed Binary Tree: A skewed tree with internal nodes having repeatedly one child
+
+Degenerate (Pathalogical) Tree: All nodes have one child each. They perform the same a linked list.
